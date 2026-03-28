@@ -617,6 +617,13 @@
       color: var(--text);
     }
 
+    a.pub-title {
+      text-decoration: none;
+      transition: color var(--transition);
+    }
+
+    a.pub-title:hover { color: var(--penn-red); }
+
     .pub-venue {
       display: block;
       font-size: .8rem;
@@ -942,6 +949,7 @@
     <li><a href="#publications">Publications</a></li>
     <li><a href="#talks">Talks</a></li>
     <li><a href="#experience">CV</a></li>
+    <li><a href="#honors">Honors</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 
@@ -959,6 +967,7 @@
   <a href="#publications" onclick="closeMobile()">Publications</a>
   <a href="#talks"       onclick="closeMobile()">Talks</a>
   <a href="#experience"  onclick="closeMobile()">CV</a>
+  <a href="#honors"      onclick="closeMobile()">Honors</a>
   <a href="#contact"     onclick="closeMobile()">Contact</a>
 </div>
 
@@ -966,9 +975,8 @@
 <section id="home">
   <div class="hero-inner">
     <div class="avatar" id="avatar">
-      <!-- Set src="your-photo.jpg" to show your photo -->
-      <img src="" alt="Zhe Chen" id="profile-photo" />
-      <span id="avatar-fallback">ZC</span>
+      <img src="photo.jpg" alt="Zhe Chen" id="profile-photo" style="display:block;" />
+      <span id="avatar-fallback" style="display:none;">ZC</span>
     </div>
 
     <div class="hero-text">
@@ -984,7 +992,7 @@
 
       <p class="hero-bio">
         I am currently a Postdoctoral Researcher at the University of Pennsylvania,
-        advised by Dr. Michael Harhay and Dr. Bo Zhang (Fred Hutchinson Cancer Center).
+        working with Drs. Michael Harhay, Dylan Small, Scott Halpern, and Katherine Courtright.
         My work develops rigorous statistical methodology for causal inference in
         observational studies, randomized trials, and vaccine immunology.
       </p>
@@ -1049,7 +1057,7 @@
           <span class="pub-year">2025</span>
           <div class="pub-body">
             <b>Chen, Z.</b>, Li, X.
-            <span class="pub-title">Enhanced inference for distributions and quantiles of individual treatment effects in various experiments.</span>
+            <a href="https://arxiv.org/abs/2407.13261" target="_blank" class="pub-title">Enhanced inference for distributions and quantiles of individual treatment effects in various experiments.</a>
             <span class="pub-venue">Journal of the American Statistical Association
               <span class="badge badge-pub">In Press</span>
             </span>
@@ -1060,7 +1068,7 @@
           <span class="pub-year">2025</span>
           <div class="pub-body">
             <b>Chen, Z.</b>, Cho, M. H., Zhang, B.
-            <span class="pub-title">Manipulating an Instrumental Variable in an Observational Study of Premature Babies: Design, Bounds, and Inference.</span>
+            <a href="https://doi.org/10.1080/01621459.2024.2395588" target="_blank" class="pub-title">Manipulating an Instrumental Variable in an Observational Study of Premature Babies: Design, Bounds, and Inference.</a>
             <span class="pub-venue">Journal of the American Statistical Association, 120(552), 2065–2078.</span>
           </div>
         </li>
@@ -1069,7 +1077,7 @@
           <span class="pub-year">2025</span>
           <div class="pub-body">
             <b>Chen, Z.</b>, Heng, S., Tapley, A., De Rosa, S., Zhang, B.
-            <span class="pub-title">Determining vaccine responders in the presence of baseline immunity using single-cell assays and paired control samples.</span>
+            <a href="https://doi.org/10.1093/biostatistics/kxaf045" target="_blank" class="pub-title">Determining vaccine responders in the presence of baseline immunity using single-cell assays and paired control samples.</a>
             <span class="pub-venue">Biostatistics, Volume 26, Issue 1, kxaf045.</span>
           </div>
         </li>
@@ -1078,7 +1086,7 @@
           <span class="pub-year">2024</span>
           <div class="pub-body">
             <b>Chen, Z.</b>, Li, X., Zhang, B.
-            <span class="pub-title">The role of randomization inference in unraveling individual treatment effects in early phase vaccine trials.</span>
+            <a href="https://doi.org/10.1515/scid-2024-0001" target="_blank" class="pub-title">The role of randomization inference in unraveling individual treatment effects in early phase vaccine trials.</a>
             <span class="pub-venue">Statistical Communications in Infectious Diseases, 16(1), 20240001.</span>
           </div>
         </li>
@@ -1090,7 +1098,7 @@
             <span class="pub-title">Time-varying treatment effect models in stepped-wedge cluster-randomized trials with multiple interventions.</span>
             <span class="pub-venue">Statistics in Medicine (revision submitted)
               <span class="badge badge-rev">Revision</span>
-              · arXiv:2504.14109
+              · <a href="https://arxiv.org/abs/2504.14109" target="_blank">arXiv:2504.14109</a>
             </span>
           </div>
         </li>
@@ -1102,7 +1110,7 @@
             <span class="pub-title">Randomization inference for stepped-wedge designs with noncompliance with application to a palliative care pragmatic trial.</span>
             <span class="pub-venue">Journal of the American Statistical Association (revision invited)
               <span class="badge badge-rev">Revision Invited</span>
-              · arXiv:2509.14598
+              · <a href="https://arxiv.org/abs/2509.14598" target="_blank">arXiv:2509.14598</a>
             </span>
           </div>
         </li>
@@ -1114,7 +1122,7 @@
             <span class="pub-title">One-shot variable-ratio matching with fine balance.</span>
             <span class="pub-venue">Journal of Computational and Graphical Statistics (revision invited)
               <span class="badge badge-rev">Revision Invited</span>
-              · arXiv:2510.04383
+              · <a href="https://arxiv.org/abs/2510.04383" target="_blank">arXiv:2510.04383</a>
             </span>
           </div>
         </li>
@@ -1126,7 +1134,7 @@
             <span class="pub-title">Design-based nested instrumental variable analysis.</span>
             <span class="pub-venue">Preprint
               <span class="badge badge-pre">Preprint</span>
-              · arXiv:2511.21992
+              · <a href="https://arxiv.org/abs/2511.21992" target="_blank">arXiv:2511.21992</a>
             </span>
           </div>
         </li>
@@ -1138,7 +1146,7 @@
             <span class="pub-title">Evaluating Informative Cluster Size in Cluster Randomized Trials.</span>
             <span class="pub-venue">Preprint
               <span class="badge badge-pre">Preprint</span>
-              · arXiv:2510.01127
+              · <a href="https://arxiv.org/abs/2510.01127" target="_blank">arXiv:2510.01127</a>
             </span>
           </div>
         </li>
@@ -1155,7 +1163,7 @@
           <span class="pub-year">2025</span>
           <div class="pub-body">
             Mkhize, N. N., Zhang, B., Brackett, C., …, <b>Chen, Z.</b>, …, CoVPN 3008 Study Team.
-            <span class="pub-title">Neutralizing and binding antibodies are a correlate of risk of COVID-19 in the CoVPN 3008 study in people with HIV.</span>
+            <a href="https://doi.org/10.1038/s41467-025-56353-3" target="_blank" class="pub-title">Neutralizing and binding antibodies are a correlate of risk of COVID-19 in the CoVPN 3008 study in people with HIV.</a>
             <span class="pub-venue">Nature Communications, 16(1), 8876.</span>
           </div>
         </li>
@@ -1277,7 +1285,7 @@
           <div class="talk-title">Time-varying treatment effect models in stepped-wedge cluster-randomized trials with multiple interventions.</div>
           <div class="talk-meta">
             <span class="talk-type">Oral</span>
-            5th International Conference on Stepped Wedge Trial Design
+            5th International Conference on Stepped Wedge Trial Design · University of York, York, UK <span class="badge badge-sub">Virtual</span>
           </div>
         </div>
       </li>
@@ -1288,7 +1296,7 @@
           <div class="talk-title">Causal Inference Methods for Treatment Effect Heterogeneity in Trials and Observational Studies.</div>
           <div class="talk-meta">
             <span class="talk-type">Seminar</span>
-            UPenn CCEB DBEI Epidemiology Seminar Series
+            Penn Medicine CCEB DBEI Epidemiology Seminar Series · Philadelphia, PA
           </div>
         </div>
       </li>
@@ -1299,7 +1307,7 @@
           <div class="talk-title">Determining vaccine responders using single-cell assays and paired control samples.</div>
           <div class="talk-meta">
             <span class="talk-type">Invited</span>
-            Fred Hutch VTN Stats Meeting
+            Fred Hutch VTN Stats Meeting · Fred Hutchinson Cancer Center, Seattle, WA
           </div>
         </div>
       </li>
@@ -1310,7 +1318,7 @@
           <div class="talk-title">Randomization Inference for Partial Identification Bounds in Matched Instrumental Variable Studies.</div>
           <div class="talk-meta">
             <span class="talk-type">Contributed</span>
-            Joint Statistical Meetings
+            Joint Statistical Meetings · Portland, OR
           </div>
         </div>
       </li>
@@ -1321,7 +1329,7 @@
           <div class="talk-title">Enhanced inference for distributions of individual treatment effects in randomized experiments and quasi-experiments.</div>
           <div class="talk-meta">
             <span class="talk-type">Poster</span>
-            ICSA Applied Statistics Symposium
+            ICSA Applied Statistics Symposium · Vanderbilt University, Nashville, TN
           </div>
         </div>
       </li>
@@ -1332,7 +1340,7 @@
           <div class="talk-title">Manipulating a Continuous IV: Algorithm, Partial Identification Bounds, and Inference.</div>
           <div class="talk-meta">
             <span class="talk-type">Poster</span>
-            European Causal Inference Meeting
+            European Causal Inference Meeting · Copenhagen, Denmark
           </div>
         </div>
       </li>
@@ -1343,7 +1351,7 @@
           <div class="talk-title">The role of randomization inference in unraveling individual treatment effects in clinical trials.</div>
           <div class="talk-meta">
             <span class="talk-type">Invited</span>
-            The China-R Conference
+            The China-R Conference · Online (China)
           </div>
         </div>
       </li>
@@ -1374,7 +1382,7 @@
           <div class="tl-date">Sep 2024 – Present</div>
         </div>
         <div class="tl-org">University of Pennsylvania · Dept. of Biostatistics, Epidemiology &amp; Informatics</div>
-        <div class="tl-detail">Advisors: Dr. Michael Harhay &amp; Dr. Bo Zhang · Philadelphia, PA</div>
+        <div class="tl-detail">Working with: Dr. Michael Harhay &amp; Dr. Dylan Small · Philadelphia, PA</div>
       </div>
 
       <div class="tl-item reveal reveal-delay-2">
@@ -1415,12 +1423,31 @@
 
     </div>
 
-    <ul class="awards-list reveal">
-      <li>UIUC List of Teachers Ranked as Excellent — Spring 2024</li>
-      <li>Alteryx SparkED &amp; Phillips 66 Datathon — <strong>1st Place</strong>, Sep 2022</li>
-      <li>International Financial Planning Competition, Morgan Stanley — <strong>Champion</strong>, Aug 2018</li>
-      <li style="color:var(--muted);font-size:.82rem;">Peer Reviewer: Nature Communications · Biostatistics · Annals of the American Thoracic Society</li>
-    </ul>
+  </div>
+</section>
+
+<!-- ── HONORS & SERVICE ── -->
+<section class="section" id="honors">
+  <div class="section-inner">
+    <h2 class="reveal">Honors &amp; Service</h2>
+
+    <div style="margin-bottom:1.8rem;" class="reveal">
+      <div class="pub-section-title">Awards &amp; Honors</div>
+      <ul class="awards-list">
+        <li>UIUC List of Teachers Ranked as Excellent — Spring 2024</li>
+        <li>Alteryx SparkED &amp; Phillips 66 Datathon — <strong>1st Place</strong>, Sep 2022</li>
+        <li>International Financial Planning Competition, Morgan Stanley — <strong>Champion</strong>, Aug 2018</li>
+      </ul>
+    </div>
+
+    <div class="reveal reveal-delay-1">
+      <div class="pub-section-title">Professional Service</div>
+      <ul class="awards-list">
+        <li>Peer Reviewer: <em>Nature Communications</em></li>
+        <li>Peer Reviewer: <em>Biostatistics</em></li>
+        <li>Peer Reviewer: <em>Annals of the American Thoracic Society</em></li>
+      </ul>
+    </div>
   </div>
 </section>
 
@@ -1432,10 +1459,6 @@
       <div class="contact-card reveal">
         <div class="cc-label">Email</div>
         <div class="cc-value"><a href="mailto:zhe.chen@pennmedicine.upenn.edu">zhe.chen@pennmedicine.upenn.edu</a></div>
-      </div>
-      <div class="contact-card reveal reveal-delay-1">
-        <div class="cc-label">Phone</div>
-        <div class="cc-value">+1 (217) 305-0821</div>
       </div>
       <div class="contact-card reveal reveal-delay-2">
         <div class="cc-label">Institution</div>

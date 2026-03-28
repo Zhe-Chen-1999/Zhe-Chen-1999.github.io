@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zhe Chen | Biostatistician & Causal Inference Researcher</title>
+  <style>
+    :root {
+      --navy: #1a2e4a;
+      --blue: #2563eb;
+      --light-blue: #dbeafe;
+      --text: #1e293b;
+      --muted: #64748b;
+      --border: #e2e8f0;
+      --bg: #f8fafc;
+      --white: #ffffff;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Georgia', serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.7;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--navy);
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 56px;
+    }
+
+    nav .logo {
+      color: var(--white);
+      font-size: 1.1rem;
+      font-weight: bold;
+      letter-spacing: .02em;
+      text-decoration: none;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.8rem;
+    }
+
+    nav ul a {
+      color: #cbd5e1;
+      text-decoration: none;
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 0.875rem;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      transition: color .2s;
+    }
+
+    nav ul a:hover { color: var(--white); }
+
+    /* ── HERO ── */
+    #home {
+      background: linear-gradient(135deg, var(--navy) 0%, #1e3a5f 100%);
+      color: var(--white);
+      padding: 5rem 2rem 4rem;
+    }
+
+    .hero-inner {
+      max-width: 860px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .avatar-wrap {
+      flex-shrink: 0;
+    }
+
+    .avatar {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      background: #2d4e73;
+      border: 4px solid rgba(255,255,255,.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3.5rem;
+      color: rgba(255,255,255,.6);
+      overflow: hidden;
+    }
+
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: none; /* shows when src is set */
+    }
+
+    .hero-text h1 {
+      font-size: 2.4rem;
+      font-weight: normal;
+      letter-spacing: .01em;
+      margin-bottom: .3rem;
+    }
+
+    .hero-text .position {
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 1rem;
+      color: #93c5fd;
+      margin-bottom: .2rem;
+    }
+
+    .hero-text .institution {
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 0.95rem;
+      color: #bfdbfe;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-text .bio {
+      font-size: 0.97rem;
+      color: #cbd5e1;
+      max-width: 540px;
+      line-height: 1.75;
+      margin-bottom: 1.4rem;
+    }
+
+    .contact-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .contact-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      background: rgba(255,255,255,.1);
+      color: var(--white);
+      text-decoration: none;
+      padding: .4rem .9rem;
+      border-radius: 4px;
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 0.82rem;
+      transition: background .2s;
+      border: 1px solid rgba(255,255,255,.2);
+    }
+
+    .contact-links a:hover { background: rgba(255,255,255,.2); }
+
+    /* ── SECTION SHELL ── */
+    section {
+      padding: 4rem 2rem;
+    }
+
+    section:nth-of-type(even) {
+      background: var(--bg);
+    }
+
+    .section-inner {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    h2 {
+      font-size: 1.6rem;
+      font-weight: normal;
+      color: var(--navy);
+      border-bottom: 2px solid var(--blue);
+      padding-bottom: .4rem;
+      margin-bottom: 1.8rem;
+      letter-spacing: .01em;
+    }
+
+    /* ── RESEARCH INTERESTS ── */
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .6rem;
+    }
+
+    .tag {
+      background: var(--light-blue);
+      color: var(--blue);
+      padding: .3rem .8rem;
+      border-radius: 20px;
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 0.82rem;
+    }
+
+    /* ── PUBLICATIONS ── */
+    .pub-category {
+      margin-bottom: 2.2rem;
+    }
+
+    .pub-category h3 {
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    .pub-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .pub-item {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .pub-year {
+      flex-shrink: 0;
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 0.8rem;
+      color: var(--muted);
+      padding-top: .15rem;
+      min-width: 38px;
+    }
+
+    .pub-body {
+      font-size: 0.93rem;
+      line-height: 1.65;
+      color: var(--text);
+    }
+
+    .pub-body .pub-title {
+      font-style: italic;
+    }
+
+    .pub-body .pub-venue {
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 0.83rem;
+      color: var(--blue);
+      font-style: normal;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #dcfce7;
+      color: #166534;
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 0.7rem;
+      padding: .1rem .5rem;
+      border-radius: 3px;
+      margin-left: .5rem;
+      vertical-align: middle;
+    }
+
+    .badge.revision {
+      background: #fef9c3;
+      color: #854d0e;
+    }
+
+    .badge.submitted {
+      background: #f1f5f9;
+      color: var(--muted);
+    }
+
+    /* ── TALKS ── */
+    .talk-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: .9rem;
+    }
+
+    .talk-item {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      font-size: 0.93rem;
+    }
+
+    .talk-date {
+      flex-shrink: 0;
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 0.8rem;
+      color: var(--muted);
+      min-width: 80px;
+    }
+
+    .talk-body .talk-title { font-style: italic; }
+    .talk-body .talk-venue {
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 0.83rem;
+      color: var(--muted);
+    }
+
+    /* ── EXPERIENCE & EDUCATION ── */
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 1.4rem;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: .5rem 1.5rem;
+      padding-bottom: 1.4rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .timeline-item:last-child { border-bottom: none; padding-bottom: 0; }
+
+    .tl-title {
+      font-size: 1rem;
+      font-weight: bold;
+      color: var(--navy);
+    }
+
+    .tl-org {
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 0.87rem;
+      color: var(--text);
+    }
+
+    .tl-detail {
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 0.83rem;
+      color: var(--muted);
+    }
+
+    .tl-date {
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 0.82rem;
+      color: var(--muted);
+      white-space: nowrap;
+      text-align: right;
+    }
+
+    /* ── CONTACT ── */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .contact-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.2rem 1.4rem;
+    }
+
+    .contact-card .cc-label {
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--muted);
+      margin-bottom: .3rem;
+    }
+
+    .contact-card .cc-value {
+      font-size: 0.92rem;
+      color: var(--text);
+    }
+
+    .contact-card .cc-value a {
+      color: var(--blue);
+      text-decoration: none;
+    }
+
+    .contact-card .cc-value a:hover { text-decoration: underline; }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 0.8rem;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 600px) {
+      .hero-inner { flex-direction: column; gap: 1.5rem; }
+      .hero-text h1 { font-size: 1.8rem; }
+      nav ul { gap: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="logo" href="#home">Zhe Chen</a>
+  <ul>
+    <li><a href="#research">Research</a></li>
+    <li><a href="#publications">Publications</a></li>
+    <li><a href="#talks">Talks</a></li>
+    <li><a href="#experience">CV</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO / ABOUT -->
+<section id="home" style="padding-top:5rem;padding-bottom:4rem;background:linear-gradient(135deg,#1a2e4a 0%,#1e3a5f 100%);color:#fff;">
+  <div class="hero-inner">
+    <div class="avatar-wrap">
+      <div class="avatar">
+        <!-- Replace the src below with your photo path, e.g. src="photo.jpg" -->
+        <img src="" alt="Zhe Chen" id="profile-photo" />
+        <span id="avatar-fallback">👤</span>
+      </div>
+    </div>
+    <div class="hero-text">
+      <h1>Zhe Chen</h1>
+      <div class="position">Research-Track Assistant Professor (starting July 2026)</div>
+      <div class="institution">Department of Biostatistics, Epidemiology &amp; Informatics · University of Pennsylvania</div>
+      <p class="bio">
+        I am currently a Postdoctoral Researcher at the University of Pennsylvania, advised by
+        Dr. Michael Harhay and Dr. Bo Zhang (Fred Hutchinson Cancer Center). My research develops
+        rigorous statistical methodology for causal inference in observational studies,
+        randomized trials, and vaccine immunology. I will join Penn DBEI as a research-track
+        assistant professor in July 2026.
+      </p>
+      <div class="contact-links">
+        <a href="mailto:zhe.chen@pennmedicine.upenn.edu">✉ Email</a>
+        <a href="Zhe_Resume___RAP_-2.pdf" target="_blank">📄 CV (PDF)</a>
+        <!-- Add your Google Scholar / GitHub links below if desired -->
+        <!-- <a href="https://scholar.google.com/..." target="_blank">Google Scholar</a> -->
+        <!-- <a href="https://github.com/..." target="_blank">GitHub</a> -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESEARCH INTERESTS -->
+<section id="research">
+  <div class="section-inner">
+    <h2>Research Interests</h2>
+    <div class="tags">
+      <span class="tag">Causal Inference</span>
+      <span class="tag">Observational Studies</span>
+      <span class="tag">Individual Treatment Effects</span>
+      <span class="tag">Causal Machine Learning</span>
+      <span class="tag">Randomization-Based Inference</span>
+      <span class="tag">Instrumental Variables</span>
+      <span class="tag">Statistical Matching</span>
+      <span class="tag">Experimental Design</span>
+      <span class="tag">Clinical Trials</span>
+      <span class="tag">Stepped-Wedge Designs</span>
+      <span class="tag">Vaccine Immunology</span>
+    </div>
+  </div>
+</section>
+
+<!-- PUBLICATIONS -->
+<section id="publications">
+  <div class="section-inner">
+    <h2>Publications &amp; Preprints</h2>
+
+    <div class="pub-category">
+      <h3>Statistical Methodology</h3>
+      <ul class="pub-list">
+
+        <li class="pub-item">
+          <span class="pub-year">2025</span>
+          <div class="pub-body">
+            <b>Chen, Z.</b>, Li, X.
+            <span class="pub-title">Enhanced inference for distributions and quantiles of individual treatment effects in various experiments.</span>
+            <span class="pub-venue">Journal of the American Statistical Association.</span>
+            <span class="badge">In Press</span>
+          </div>
+        </li>
+
+        <li class="pub-item">
+          <span class="pub-year">2025</span>
+          <div class="pub-body">
+            <b>Chen, Z.</b>, Cho, M. H., Zhang, B.
+            <span class="pub-title">Manipulating an Instrumental Variable in an Observational Study of Premature Babies: Design, Bounds, and Inference.</span>
+            <span class="pub-venue">Journal of the American Statistical Association, 120(552), 2065–2078.</span>
+          </div>
+        </li>
+
+        <li class="pub-item">
+          <span class="pub-year">2025</span>
+          <div class="pub-body">
+            <b>Chen, Z.</b>, Heng, S., Tapley, A., De Rosa, S., Zhang, B.
+            <span class="pub-title">Determining vaccine responders in the presence of baseline immunity using single-cell assays and paired control samples.</span>
+            <span class="pub-venue">Biostatistics, Volume 26, Issue 1, kxaf045.</span>
+          </div>
+        </li>
+
+        <li class="pub-item">
+          <span class="pub-year">2024</span>
+          <div class="pub-body">
+            <b>Chen, Z.</b>, Li, X., Zhang, B.
+            <span class="pub-title">The role of randomization inference in unraveling individual treatment effects in early phase vaccine trials.</span>
+            <span class="pub-venue">Statistical Communications in Infectious Diseases, 16(1), 20240001.</span>
+          </div>
+        </li>
+
+        <li class="pub-item">
+          <span class="pub-year">2025</span>
+          <div class="pub-body">
+            <b>Chen, Z.</b>, Wang, W., Lu, Y., Halpern, S., Courtright, K., Li, F., Harhay, M. O.
+            <span class="pub-title">Time-varying treatment effect models in stepped-wedge cluster-randomized trials with multiple interventions.</span>
+            <span class="pub-venue">Statistics in Medicine (under revision).</span>
+            <span class="badge revision">Revision</span>
+            arXiv:2504.14109
+          </div>
+        </li>
+
+        <li class="pub-item">
+          <span class="pub-year">2025</span>
+          <div class="pub-body">
+            Zhang, J., <b>Chen, Z.</b>, Courtright, K. R., Halpern, S. D., Harhay, M. O., Small, D. S., Li, F.
+            <span class="pub-title">Randomization inference for stepped-wedge designs with noncompliance with application to a palliative care pragmatic trial.</span>
+            <span class="pub-venue">Journal of the American Statistical Association (revision invited).</span>
+            <span class="badge revision">Revision Invited</span>
+            arXiv:2509.14598
+          </div>
+        </li>
+
+        <li class="pub-item">
+          <span class="pub-year">2025</span>
+          <div class="pub-body">
+            Meng, Q., <b>Chen, Z.</b>, Zhang, B.
+            <span class="pub-title">One-shot variable-ratio matching with fine balance.</span>
+            <span class="pub-venue">Journal of Computational and Graphical Statistics (revision invited).</span>
+            <span class="badge revision">Revision Invited</span>
+            arXiv:2510.04383
+          </div>
+        </li>
+
+        <li class="pub-item">
+          <span class="pub-year">2025</span>
+          <div class="pub-body">
+            <b>Chen, Z.</b>, Li, X., Harhay, M. O., Zhang, B.
+            <span class="pub-title">Design-based nested instrumental variable analysis.</span>
+            <span class="pub-venue">Preprint.</span>
+            <span class="badge submitted">Preprint</span>
+            arXiv:2511.21992
+          </div>
+        </li>
+
+        <li class="pub-item">
+          <span class="pub-year">2025</span>
+          <div class="pub-body">
+            Blette, B. S., <b>Chen, Z.</b>, Kahan, B. C., Forbes, A., Harhay, M. O., Li, F.
+            <span class="pub-title">Evaluating Informative Cluster Size in Cluster Randomized Trials.</span>
+            <span class="pub-venue">Preprint.</span>
+            <span class="badge submitted">Preprint</span>
+            arXiv:2510.01127
+          </div>
+        </li>
+
+      </ul>
+    </div>
+
+    <div class="pub-category">
+      <h3>Collaborative &amp; Applied Work</h3>
+      <ul class="pub-list">
+
+        <li class="pub-item">
+          <span class="pub-year">2025</span>
+          <div class="pub-body">
+            Mkhize, N. N., Zhang, B., Brackett, C., …, <b>Chen, Z.</b>, …, CoVPN 3008 Study Team.
+            <span class="pub-title">Neutralizing and binding antibodies are a correlate of risk of COVID-19 in the CoVPN 3008 study in people with HIV.</span>
+            <span class="pub-venue">Nature Communications, 16(1), 8876.</span>
+          </div>
+        </li>
+
+        <li class="pub-item">
+          <span class="pub-year">2025</span>
+          <div class="pub-body">
+            Dorovini-Zis, K., Li, H., <b>Chen, Z.</b>, Zhang, B., Small, D. S., Taylor, T. E.
+            <span class="pub-title">Mapping the expression of endothelial adhesion receptors for Plasmodium falciparum-infected erythrocytes in fatal cerebral malaria in Malawian children.</span>
+            <span class="pub-venue">Journal of Neuropathology and Experimental Neurology, 84(12), 1113–1134.</span>
+            <span class="badge">Journal Cover</span>
+          </div>
+        </li>
+
+        <li class="pub-item">
+          <span class="pub-year">2026</span>
+          <div class="pub-body">
+            Marinho, L. L., Lileikyte, G., Boileau, P., Lu, Y., …, <b>Chen, Z.</b>, …, Lawler, P. R.
+            <span class="pub-title">Evaluating Possible Treatment Effect Heterogeneity in a Randomized Trial of Milrinone Versus Dobutamine in Cardiogenic Shock.</span>
+            <span class="pub-venue">Critical Care (just accepted).</span>
+            <span class="badge">In Press</span>
+          </div>
+        </li>
+
+        <li class="pub-item">
+          <span class="pub-year">2025</span>
+          <div class="pub-body">
+            Ebert, J. P., Huo, S., Perrone, J., …, <b>Chen, Z.</b>, …, Delgado, M. K.
+            <span class="pub-title">An Emergency Department Nudge-Based Strategy to Screen and Treat Patients with Alcohol Misuse.</span>
+            <span class="pub-venue">Annals of Emergency Medicine (just accepted).</span>
+            <span class="badge">In Press</span>
+          </div>
+        </li>
+
+        <li class="pub-item">
+          <span class="pub-year">2025</span>
+          <div class="pub-body">
+            Jorda, A., Gelbenegger, G., …, <b>Chen, Z.</b>, …, Auriemma, C. L.
+            <span class="pub-title">Effects of an early restrictive versus liberal fluid strategy on long-term patient-centered outcomes in sepsis-induced hypotension (SHAMROC).</span>
+            <span class="pub-venue">American Journal of Respiratory and Critical Care Medicine (under revision).</span>
+            <span class="badge revision">Revision</span>
+          </div>
+        </li>
+
+        <li class="pub-item">
+          <span class="pub-year">2025</span>
+          <div class="pub-body">
+            Kelly, J. J., <b>Chen, Z.</b>, Bavaria, J. E., …, Desai, N. D.
+            <span class="pub-title">Patients Undergoing Surgery for Acute Type A Aortic Dissection on Preoperative Anticoagulants and Antiplatelets.</span>
+            <span class="pub-venue">The Annals of Thoracic Surgery (revision invited).</span>
+            <span class="badge revision">Revision Invited</span>
+          </div>
+        </li>
+
+        <li class="pub-item">
+          <span class="pub-year">2026</span>
+          <div class="pub-body">
+            Granton, D., <b>Chen, Z.</b>, Hajage, D., Combes, A., Li, F., Fan, E., Harhay, M. O.
+            <span class="pub-title">Limited Heterogeneity of Treatment Effect of Venovenous ECMO in Severe ARDS: A Secondary Analysis of the EOLIA Trial.</span>
+            <span class="pub-venue">American Journal of Respiratory and Critical Care Medicine (submitted).</span>
+            <span class="badge submitted">Submitted</span>
+          </div>
+        </li>
+
+        <li class="pub-item">
+          <span class="pub-year">2026</span>
+          <div class="pub-body">
+            Khuzwayo, S., Zhang, B., Voillet, V., …, <b>Chen, Z.</b>, …, CoVPN 3008 Study Team.
+            <span class="pub-title">CD4+ T cell responses after mRNA-1273 SARS-CoV-2 vaccination in people with HIV are associated with risk of COVID-19.</span>
+            <span class="pub-venue">Nature Communications (submitted).</span>
+            <span class="badge submitted">Submitted</span>
+          </div>
+        </li>
+
+        <li class="pub-item">
+          <span class="pub-year">2025</span>
+          <div class="pub-body">
+            Zhang, B., Fong, Y., Yu, C., …, <b>Chen, Z.</b>, …, COVAIL Study Team.
+            <span class="pub-title">T-cell immune correlates in COVAIL trial participants by prior SARS-CoV-2 infection status.</span>
+            <span class="pub-venue">Nature Communications (revision invited).</span>
+            <span class="badge revision">Revision Invited</span>
+          </div>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- TALKS -->
+<section id="talks">
+  <div class="section-inner">
+    <h2>Talks &amp; Presentations</h2>
+    <ul class="talk-list">
+
+      <li class="talk-item">
+        <span class="talk-date">May 2026</span>
+        <div class="talk-body">
+          <div class="talk-title">Design-based nested instrumental variable analysis.</div>
+          <div class="talk-venue">Poster · American Causal Inference Conference</div>
+        </div>
+      </li>
+
+      <li class="talk-item">
+        <span class="talk-date">May 2026</span>
+        <div class="talk-body">
+          <div class="talk-title">Time-varying treatment effect models in stepped-wedge cluster-randomized trials with multiple interventions.</div>
+          <div class="talk-venue">Oral · 5th International Conference on Stepped Wedge Trial Design</div>
+        </div>
+      </li>
+
+      <li class="talk-item">
+        <span class="talk-date">Dec 2025</span>
+        <div class="talk-body">
+          <div class="talk-title">Causal Inference Methods for Treatment Effect Heterogeneity in Trials and Observational Studies.</div>
+          <div class="talk-venue">Seminar · UPenn CCEB DBEI Epidemiology Seminar Series</div>
+        </div>
+      </li>
+
+      <li class="talk-item">
+        <span class="talk-date">May 2025</span>
+        <div class="talk-body">
+          <div class="talk-title">Determining vaccine responders using single-cell assays and paired control samples.</div>
+          <div class="talk-venue">Invited Talk · Fred Hutch VTN Stats Meeting</div>
+        </div>
+      </li>
+
+      <li class="talk-item">
+        <span class="talk-date">Aug 2024</span>
+        <div class="talk-body">
+          <div class="talk-title">Randomization Inference for Partial Identification Bounds in Matched Instrumental Variable Studies.</div>
+          <div class="talk-venue">Contributed Talk · Joint Statistical Meetings</div>
+        </div>
+      </li>
+
+      <li class="talk-item">
+        <span class="talk-date">Jun 2024</span>
+        <div class="talk-body">
+          <div class="talk-title">Enhanced inference for distributions of individual treatment effects in randomized experiments and quasi-experiments.</div>
+          <div class="talk-venue">Poster · ICSA Applied Statistics Symposium</div>
+        </div>
+      </li>
+
+      <li class="talk-item">
+        <span class="talk-date">Apr 2024</span>
+        <div class="talk-body">
+          <div class="talk-title">Manipulating a Continuous IV: Algorithm, Partial Identification Bounds, and Inference.</div>
+          <div class="talk-venue">Poster · European Causal Inference Meeting</div>
+        </div>
+      </li>
+
+      <li class="talk-item">
+        <span class="talk-date">Nov 2023</span>
+        <div class="talk-body">
+          <div class="talk-title">The role of randomization inference in unraveling individual treatment effects in clinical trials.</div>
+          <div class="talk-venue">Invited Talk · The China-R Conference</div>
+        </div>
+      </li>
+
+    </ul>
+  </div>
+</section>
+
+<!-- EXPERIENCE & EDUCATION -->
+<section id="experience">
+  <div class="section-inner">
+    <h2>Experience &amp; Education</h2>
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div>
+          <div class="tl-title">Research-Track Assistant Professor</div>
+          <div class="tl-org">Department of Biostatistics, Epidemiology &amp; Informatics, University of Pennsylvania</div>
+          <div class="tl-detail">Starting July 2026 · Philadelphia, PA</div>
+        </div>
+        <div class="tl-date">Jul 2026 –</div>
+      </div>
+
+      <div class="timeline-item">
+        <div>
+          <div class="tl-title">Postdoctoral Researcher</div>
+          <div class="tl-org">University of Pennsylvania</div>
+          <div class="tl-detail">Department of Biostatistics, Epidemiology &amp; Informatics · Advisors: Dr. Michael Harhay &amp; Dr. Bo Zhang · Philadelphia, PA</div>
+        </div>
+        <div class="tl-date">Sep 2024 – Present</div>
+      </div>
+
+      <div class="timeline-item">
+        <div>
+          <div class="tl-title">Research Associate</div>
+          <div class="tl-org">Fred Hutchinson Cancer Center</div>
+          <div class="tl-detail">Vaccine and Infectious Disease Division · Mentor: Dr. Bo Zhang · Seattle, WA</div>
+        </div>
+        <div class="tl-date">May – Sep 2023</div>
+      </div>
+
+      <div class="timeline-item">
+        <div>
+          <div class="tl-title">Ph.D. in Statistics</div>
+          <div class="tl-org">University of Illinois, Urbana-Champaign</div>
+          <div class="tl-detail">Advisor: Dr. Xinran Li · GPA: 3.96/4.0</div>
+        </div>
+        <div class="tl-date">Aug 2020 – Aug 2024</div>
+      </div>
+
+      <div class="timeline-item">
+        <div>
+          <div class="tl-title">Berkeley Global Exchange Program</div>
+          <div class="tl-org">University of California, Berkeley</div>
+          <div class="tl-detail">GPA: 4.0/4.0</div>
+        </div>
+        <div class="tl-date">Jan – Aug 2019</div>
+      </div>
+
+      <div class="timeline-item">
+        <div>
+          <div class="tl-title">Bachelor of Science in Statistics</div>
+          <div class="tl-org">Southern University of Science and Technology</div>
+          <div class="tl-detail">GPA: 3.91/4.00 · Rank 1st in cohort · Shenzhen, China</div>
+        </div>
+        <div class="tl-date">Sep 2016 – Jun 2020</div>
+      </div>
+
+    </div>
+
+    <div style="margin-top:2rem;">
+      <h3 style="font-family:'Helvetica Neue',sans-serif;font-size:0.8rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:.8rem;">Awards &amp; Service</h3>
+      <ul style="list-style:none;font-size:0.92rem;display:flex;flex-direction:column;gap:.5rem;">
+        <li>UIUC List of Teachers Ranked as Excellent — Spring 2024</li>
+        <li>Alteryx SparkED &amp; Phillips 66 Datathon: <b>1st Place Winner</b> — Sep 2022</li>
+        <li>International Financial Planning Competition, Morgan Stanley: <b>Champion</b> — Aug 2018</li>
+        <li style="color:var(--muted);font-family:'Helvetica Neue',sans-serif;font-size:0.83rem;margin-top:.3rem;">Peer Review: Nature Communications · Biostatistics · Annals of the American Thoracic Society</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner">
+    <h2>Contact</h2>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="cc-label">Email</div>
+        <div class="cc-value"><a href="mailto:zhe.chen@pennmedicine.upenn.edu">zhe.chen@pennmedicine.upenn.edu</a></div>
+      </div>
+      <div class="contact-card">
+        <div class="cc-label">Phone</div>
+        <div class="cc-value">+1 (217) 305-0821</div>
+      </div>
+      <div class="contact-card">
+        <div class="cc-label">Institution</div>
+        <div class="cc-value">Department of Biostatistics, Epidemiology &amp; Informatics<br>University of Pennsylvania<br>Philadelphia, PA</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  &copy; 2026 Zhe Chen &nbsp;·&nbsp; University of Pennsylvania
+</footer>
+
+<script>
+  // If a profile photo is set, show it and hide the fallback emoji
+  const img = document.getElementById('profile-photo');
+  const fallback = document.getElementById('avatar-fallback');
+  if (img && img.src && !img.src.endsWith('/')) {
+    img.onload = () => { img.style.display = 'block'; fallback.style.display = 'none'; };
+  }
+</script>
+
+</body>
+</html>
